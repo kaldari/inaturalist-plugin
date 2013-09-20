@@ -67,31 +67,29 @@ class inat_login_widget extends WP_Widget {
 		}
 	
 		?>
-		<form action="login.action.php" method="post">
 		<p>
 			<label for="login">Username</label>
-			<input type="text" name="login" pattern=".{3,40}" required />
+			<input type="text" name="login" id="inat-username" pattern=".{3,40}" required="required" />
 			<!--Allowed values: Must be within 3 and 40 characters and must not begin with a number.-->
 		</p>
 		<p>
 			<label for="password">Password</label>
-			<input type="password" name="password" id="password" pattern=".{5,}" required />
+			<input type="password" name="password" id="inat-password" pattern=".{5,}" required="required" />
 			<!--Allowed values: Minimum 5 characters (this is not inat specified)-->
 		</p>
 		<?php
 		// Check if creating new accounts is allowed
 		if ( $createAccount ) {
 			echo "<p>\n";
-			echo "<a href='register.block.php' class='small'>" .
+			echo "<a href='#' id='inat-create-account-link'>" .
 				__( 'Create a new account', 'wp_inaturalist' ) .
 				"</a><br/>\n";
 			echo "</p>\n";
 		}
 		?>
 		<p>
-			<input type="submit" value="<?php _e( 'Login', 'wp_inaturalist' ); ?>"/>
+			<input id="inat-login-submit" type="submit" value="<?php _e( 'Login', 'wp_inaturalist' ); ?>"/>
 		</p>
-		</form>
 		<?php
 	
 		echo '</div>';
@@ -149,10 +147,7 @@ class inat_add_observation_widget extends WP_Widget {
 			echo $before_title . $title . $after_title;
 		}
 	
-		?>
-		<form action="add.obs.action.php" method="post">
-		</form>
-		<?php
+		// Output the form here.
 	
 		echo '</div>';
 		echo $after_widget;
