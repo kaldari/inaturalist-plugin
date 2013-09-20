@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: iNaturalist Plugin
-Plugin URI:
+Plugin URI: https://github.com/kaldari/inaturalist-plugin
 Description: A plugin that lets you site interface with iNaturalist
 Version: 1.0
 Author: Kaldari
